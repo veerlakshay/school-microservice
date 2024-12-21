@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @CrossOrigin("*")
-@RequestMapping(value = "/school")
+@RequestMapping(value="/school")
 @RestController
 public class SchoolController {
     private final SchoolService schoolService;
@@ -17,6 +17,7 @@ public class SchoolController {
 
     @PostMapping
     public School addSchool(@RequestBody School school){
+        System.out.println("Received school: " + school);  // Debugging log
         return schoolService.addSchool(school);
     }
 
